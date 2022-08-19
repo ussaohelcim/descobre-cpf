@@ -21,11 +21,13 @@ btnDescobrir.addEventListener('click', (me) => {
     let lista = descobreCPFs(inputCPF.value, checkboxCompleto.checked);
     if (checkboxJSON.checked) {
         let filter = document.querySelector("#filter");
-        lista = lista.filter((cpf) => {
-            let t = cpf;
-            let estado = getEstado(cpf) || getEstado(t.cpf);
-            return estado === filter.value;
-        });
+        if (filter.value) {
+            lista = lista.filter((cpf) => {
+                let t = cpf;
+                let estado = getEstado(cpf) || getEstado(t.cpf);
+                return estado === filter.value;
+            });
+        }
         downloadJson(inputCPF.value, lista);
     }
     else {

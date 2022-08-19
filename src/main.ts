@@ -27,11 +27,15 @@ btnDescobrir.addEventListener('click', (me) => {
 
 	if (checkboxJSON.checked) {
 		let filter = document.querySelector("#filter") as HTMLInputElement
-		lista = lista.filter((cpf) => {
-			let t = cpf as { cpf: string, estado: string } 
-			let estado = getEstado(cpf as string) || getEstado(t.cpf)
-			return estado === filter.value
-		})
+		
+		if (filter.value) {
+			lista = lista.filter((cpf) => {
+				let t = cpf as { cpf: string, estado: string } 
+				let estado = getEstado(cpf as string) || getEstado(t.cpf)
+				return estado === filter.value
+			})
+		}
+
 		downloadJson(inputCPF.value,lista)
 	} else {
 		let filter = document.querySelector("#filter") as HTMLInputElement
