@@ -15,14 +15,12 @@ main{
 	display: flex;
 	height: 100%;
 	width: 100%;
-	/* align-items: center;; */
 	justify-content: center;
 	scrollbar-width: none; 
-	/* margin: 50pt; */
 }
 #output{
 	overflow-y: scroll;
-	width: 80%;
+	width: 100%;
 	height: inherit;
 }
 p {
@@ -36,5 +34,4 @@ div{
 	main{
 		flex-direction: column;
 	}
-
 }
