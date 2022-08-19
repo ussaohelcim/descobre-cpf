@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>descobre-cpf</title>
+</head>
+<body>
+	<h2>descobre-cpf</h2>
+	<header>
+		<p>Ferramenta para descobrir CPFs validos usando um CPF incompleto.</p>
+		<p>Digite o cpf, colocando um 'x' nos numeros que você não sabe.</p>
+	</header>
+	
+	<main>
+		<div id="input">
+			<p>
+				cpf:
+				<input type="text" placeholder="CPF" maxlength="11" name="" id="cpf">
+			</p>
+			<p>
+				mostrar estado?
+				<input type="checkbox" name="" id="checkbox">
+			</p>
+			<p>
+				exportar como json?
+				<input type="checkbox" name="" id="jsoncheckbox">
+			</p>
+			<p>
+				Mostrar apenas
+				<input list="estados" name="estado" id="filter">
+				<datalist id="estados">
+					<option value="Rio Grande do Sul">
+					<option value="Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul e Tocantins">
+					<option value="Amazonas, Pará, Roraima, Amapá, Acre e Rondônia">
+					<option value="Ceará, Maranhão e Piauí">
+					<option value="Paraíba, Pernambuco, Alagoas e Rio Grande do Norte">
+					<option value="Bahia e Sergipe">
+					<option value="Minas Gerais">
+					<option value="Rio de Janeiro e Espírito Santo">
+					<option value="São Paulo">
+					<option value="Paraná e Santa Catarina">
+				</datalist>
+			</p>
+			<input type="button" value="descobrir" id="btn">
+		</div>
+		
+		<div id="output"></div>
+	</main>
+	<p>Feito por <a target="_blank" href="https://github.com/ussaohelcim/descobre-cpf">ussaohelcim</a></p>
+	
+	<script type="module" src="/dist/main.js"></script>
+</body>
+</html>
